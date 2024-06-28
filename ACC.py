@@ -19,7 +19,7 @@ with open(path2, 'r', encoding='utf-8') as f:
 
 #print(data_list)
 x = ['yes','Yes','No','no']
-y = ['yes','Yes','people','person']
+y = ['yes','Yes']
 z = ['No','no']
 def deli(y,z,st = None):
     if st in y:
