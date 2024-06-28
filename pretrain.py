@@ -174,9 +174,9 @@ def main(args, config):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', default='/home/cjw/code/VQA/miss-main/configs/pretrain.yaml')
-    parser.add_argument('--output_dir', default='/Dataset1/cjw/pretrained/MISS/missandmedicat_pretrain')  
-    parser.add_argument('--checkpoint', default='/Dataset1/cjw/pretrained/MISS/missandmedicat_pretrain/checkpoint_59.pth')    
+    parser.add_argument('--config', default='/miss-main/configs/pretrain.yaml')
+    parser.add_argument('--output_dir', default='/MISS/missandmedicat_pretrain')  
+    parser.add_argument('--checkpoint', default='')    
     parser.add_argument('--evaluate', action='store_true')    
     parser.add_argument('--device', default='cuda:1')
     parser.add_argument('--seed', default=42, type=int)
