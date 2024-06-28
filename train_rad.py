@@ -110,9 +110,9 @@ def main(args, config):
             #transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
             ])
     #datasets = create_dataset('vqa', config)  
-    datadir = r'/Dataset1/cjw/VQA_RAD/VQA_RAD_Image_Folder'
-    train_labeldir = r'/Dataset1/cjw/VQA_RAD/train.jsol'
-    test_labeldir = r'/Dataset1/cjw/VQA_RAD/test.jsol'
+    datadir = r'/VQA_RAD_Image_Folder'
+    train_labeldir = r'/VQA_RAD/train.jsol'
+    test_labeldir = r'/VQA_RAD/test.jsol'
     train_datasets = VQA_dataset(data_dir=datadir,label_dir=train_labeldir,transform=transform_train) 
     test_datasets = VQA_dataset(data_dir=datadir, label_dir= test_labeldir, transform= transform_train)
     
@@ -182,8 +182,8 @@ def main(args, config):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', default='/home/cjw/code/VQA/miss-main/configs/vqa.yaml') 
-    parser.add_argument('--output_dir', default='/Dataset1/cjw/pretrained/eval_result_3.8')
+    parser.add_argument('--config', default='/miss-main/configs/vqa.yaml') 
+    parser.add_argument('--output_dir', default='')
     parser.add_argument('--evaluate', action='store_true')      
     parser.add_argument('--device', default='cuda')
     parser.add_argument('--seed', default=42, type=int)
