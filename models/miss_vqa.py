@@ -11,7 +11,7 @@ from transformers import AutoModelForSeq2SeqLM
 #from peft import PromptTuningConfig
 class MISS_VQA(nn.Module):
     def __init__(self,                 
-                 med_config = '/home/cjw/code/VQA/BLIP-main/configs/med_config.json',  
+                 med_config = './configs/med_config.json',  
                  image_size = 480,
                  vit = 'base',
                  vit_grad_ckpt = False,
