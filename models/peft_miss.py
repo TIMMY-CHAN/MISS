@@ -11,7 +11,7 @@ from peft import get_peft_config, get_peft_model, get_peft_model_state_dict, Lor
 #from peft import PromptTuningConfig
 class MISS_VQA(nn.Module):
     def __init__(self,                 
-                 med_config = '/home/cjw/code/VQA/MISS-main/configs/med_config.json',  
+                 med_config = './configs/med_config.json',  
                  image_size = 480,
                  vit = 'base',
                  vit_grad_ckpt = False,
