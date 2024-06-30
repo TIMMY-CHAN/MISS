@@ -1,8 +1,3 @@
-#train_file: ['/export/share/junnan-li/VL_pretrain/annotation/coco_karpathy_train.json',
-#             '/export/share/junnan-li/VL_pretrain/annotation/vg_caption.json',
-#             ]
-#laion_path: ''   
-
 # size of vit model; base or large
 vit: 'base'
 vit_grad_ckpt: False
