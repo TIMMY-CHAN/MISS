@@ -1,6 +1,6 @@
 
 # set pretrained as a file path or an url
-pretrained: '/Dataset1/cjw/pretrained/MISS/blipandmedicat_pretrain/checkpoint_69.pth'
+pretrained: 'Your path to pretrained model'
 # size of vit model; base or large
 vit: 'base'
 batch_size_train: 16 
