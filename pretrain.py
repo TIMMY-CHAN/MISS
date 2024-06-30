@@ -93,6 +93,7 @@ def main(args, config):
 
     #### Dataset #### 
     print("Creating dataset")
+    # pretrain with medicat dataset
     datasets = [create_dataset('pretrain', config, min_scale=0.2)]
     data_dir = r'/medicat/release/train_imgs'
     list_dir = r'/medicat/img_name.txt'
