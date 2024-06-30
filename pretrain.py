@@ -93,23 +93,19 @@ def main(args, config):
 
     #### Dataset #### 
     print("Creating dataset")
-    #datasets = [create_dataset('pretrain', config, min_scale=0.2)]
-    #data_dir = r'/Dataset1/cjw/medicat/release/train_imgs'
-    #list_dir = r'/home/cjw/Dataset1/medicat/img_name.txt'
-    #cap_path = r'/Dataset1/cjw/medicat/release/medicat.csv'
+    datasets = [create_dataset('pretrain', config, min_scale=0.2)]
+    data_dir = r'/medicat/release/train_imgs'
+    list_dir = r'/medicat/img_name.txt'
+    cap_path = r'/medicat/release/medicat.csv'
 
-    #RSNA
-    data_dir = r'/Dataset1/cjw/RSNA/train'
-    list_dir = r'/Dataset1/cjw/RSNA/index.txt'
-    cap_path = r'/Dataset1/cjw/RSNA/caption.csv'
-    label_csv = pd.read_csv(cap_path, index_col=0)
+
     transform_train = transforms.Compose([
             transforms.Resize((224,224)),
             transforms.ToTensor(),
             #transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
             ])
-    #datasets = Medicat_dataset(data_dir,label_csv, list_dir, transform=transform_train)
-    datasets = rsna_dataset(data_dir,label_csv, list_dir, transform=transform_train)
+    datasets = Medicat_dataset(data_dir,label_csv, list_dir, transform=transform_train)
+
     print('number of training samples: %d'%len(datasets[0]))
 
     num_tasks = utils.get_world_size()
@@ -174,7 +170,7 @@ def main(args, config):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', default='/miss-main/configs/pretrain.yaml')
+    parser.add_argument('--config', default='./configs/pretrain.yaml')
     parser.add_argument('--output_dir', default='/MISS/missandmedicat_pretrain')  
     parser.add_argument('--checkpoint', default='')    
     parser.add_argument('--evaluate', action='store_true')    
