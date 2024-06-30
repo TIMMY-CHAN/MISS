@@ -11,7 +11,7 @@ from models.miss import create_vit, init_tokenizer, load_checkpoint
 
 class MISS_Pretrain(nn.Module):
     def __init__(self,                 
-                 med_config = '/home/cjw/code/VQA/MISS-main/configs/bert_config.json',  
+                 med_config = './configs/bert_config.json',  
                  image_size = 224,
                  vit = 'base',
                  vit_grad_ckpt = False,
